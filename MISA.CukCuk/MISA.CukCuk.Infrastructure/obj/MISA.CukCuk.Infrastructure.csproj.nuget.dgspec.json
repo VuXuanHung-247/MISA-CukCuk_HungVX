@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj": {}
+    "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj": {
+    "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
         "projectName": "MISA.CukCuk.Core",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -73,14 +73,14 @@
         }
       }
     },
-    "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj": {
+    "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj",
         "projectName": "MISA.CukCuk.Infrastructure",
-        "projectPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj",
+        "projectPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\MISA.CukCuk.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -102,8 +102,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj": {
-                "projectPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj"
+              "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj": {
+                "projectPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj"
               }
             }
           }

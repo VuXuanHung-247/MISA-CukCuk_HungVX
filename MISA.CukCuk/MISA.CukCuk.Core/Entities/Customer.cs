@@ -8,7 +8,7 @@ namespace MISA.CukCuk.Core.Entities
     /// Thông tin khách hàng
     /// </summary>
     /// CreateBy: VXHUNG(24/05/2021)
-    public class Customer
+    public class Customer:BaseEntity
     {
         /// <summary>
         /// Khóa chính

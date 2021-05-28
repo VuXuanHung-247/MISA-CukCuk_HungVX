@@ -10,44 +10,18 @@ using System.Text;
 
 namespace MISA.CukCuk.Core.Services
 {
-    public class CustomerService : BaseEntity, ICustomerService
+    public class CustomerService : BaseService<Customer>, ICustomerService
     {
         ICustomerRepository _customerRepository;
         ServiceResult _serviceResult;
 
         #region Constructor
-        public CustomerService(ICustomerRepository customerRepository)
+        public CustomerService(ICustomerRepository customerRepository) : base(customerRepository)
         {
             _customerRepository = customerRepository;
             _serviceResult = new ServiceResult();
         }
         #endregion
 
-        public IEnumerable<Customer> GetAll()
-        {
-            var customer = _customerRepository.GetAll();
-            return customer;
-        }
-
-        public Customer GetById(Guid customerId)
-        {
-            var customer = _customerRepository.GetById(customerId);
-            return customer;
-        }
-
-        public int Insert(Customer customer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Update(Customer customer, Guid customerId)
-        {
-            throw new NotImplementedException();
-        }
-        public int Delete(Guid customerId)
-        {
-            throw new NotImplementedException();
-        }
-        
     }
 }

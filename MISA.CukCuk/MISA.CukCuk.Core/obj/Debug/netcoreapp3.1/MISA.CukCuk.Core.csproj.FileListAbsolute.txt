@@ -16,3 +16,12 @@ C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\obj\Debug
 C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.deps.json
 C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.dll
 C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.pdb
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\obj\Debug\netcoreapp3.1\MISA.CukCuk.Core.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\obj\Debug\netcoreapp3.1\MISA.CukCuk.Core.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\obj\Debug\netcoreapp3.1\MISA.CukCuk.Core.AssemblyInfo.cs
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\obj\Debug\netcoreapp3.1\MISA.CukCuk.Core.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\obj\Debug\netcoreapp3.1\MISA.CukCuk.Core.dll
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\obj\Debug\netcoreapp3.1\MISA.CukCuk.Core.pdb
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.deps.json
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.dll
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.pdb

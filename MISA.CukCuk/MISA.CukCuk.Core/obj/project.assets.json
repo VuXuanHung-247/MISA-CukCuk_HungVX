@@ -126,11 +126,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
       "projectName": "MISA.CukCuk.Core",
-      "projectPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\MISA.CukCuk.Core.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

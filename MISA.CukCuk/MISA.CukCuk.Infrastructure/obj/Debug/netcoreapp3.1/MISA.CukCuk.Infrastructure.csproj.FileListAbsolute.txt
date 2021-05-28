@@ -22,3 +22,15 @@ C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure
 C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csproj.CopyComplete
 C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.dll
 C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.pdb
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.AssemblyInfo.cs
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.dll
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.pdb
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.deps.json
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.dll
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.pdb
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.dll
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.pdb
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Infrastructure\obj\Debug\netcoreapp3.1\MISA.CukCuk.Infrastructure.csproj.CopyComplete

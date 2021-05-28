@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QqMgqDwpiBtFvNgoV7F+27et/sSKCQqngcfL7IYbv2Gbn+cX+UJJiZmGMFABlq18ht6MfM5zXgWFbpS57Tdjew==",
+  "dgSpecHash": "yHRESXi6p+C2xYRGSJTgiOJ5RGx28O9J5uE3GXCWHcPtVOMvNCKtefJ2r+WSqQaFr/amIUnOIVtpCB/rdQ7X9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\MISA.CukCuk_HungVX\\MISA-CukCuk_HungVX\\MISA.CukCuk\\MISA.CukCuk.Api\\MISA.CukCuk.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\documentformat.openxml\\2.13.0\\documentformat.openxml.2.13.0.nupkg.sha512",
