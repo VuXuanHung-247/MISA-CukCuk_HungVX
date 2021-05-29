@@ -42,7 +42,7 @@ namespace MISA.CukCuk.Infrastructure.Repository
         }
 
         /// <summary>
-        /// 
+        /// lấy dữ liệu thực thể theo Id
         /// </summary>
         /// <param name="entityId"></param>
         /// <returns></returns>
@@ -51,7 +51,7 @@ namespace MISA.CukCuk.Infrastructure.Repository
         {
             var storeName = $"Proc_Get{_tableName}ById";
             DynamicParameters dynamicParameters = new DynamicParameters();
-            var storeGetByIdInputParamName = $"@{_tableName}Id";
+            var storeGetByIdInputParamName = $"@m_{_tableName}Id";
             dynamicParameters.Add(storeGetByIdInputParamName, entityId.ToString());
 
             var entity = _dbConnection.Query<MISAEntity>(storeName, param: dynamicParameters, commandType: CommandType.StoredProcedure).FirstOrDefault();
@@ -97,7 +97,7 @@ namespace MISA.CukCuk.Infrastructure.Repository
         {
             var storeName = $"Proc_Delete{_tableName}ById"; 
              DynamicParameters dynamicParameters = new DynamicParameters();
-            var storeGetByIdInputParamName = $"@{_tableName}Id";
+            var storeGetByIdInputParamName = $"@m_{_tableName}Id";
             dynamicParameters.Add(storeGetByIdInputParamName, entityId.ToString());
 
             var result = _dbConnection.Execute(storeName, param: dynamicParameters, commandType: CommandType.StoredProcedure);
@@ -127,16 +127,16 @@ namespace MISA.CukCuk.Infrastructure.Repository
                 var propertyType = property.PropertyType;
                 if (propertyType == typeof(Guid) || propertyType == typeof(Guid?))
                 {
-                    parameters.Add($"@{propertyName}", propertyValue, DbType.String);
+                    parameters.Add($"@m_{propertyName}", propertyValue, DbType.String);
                 }
                 else if (propertyType == typeof(bool) || propertyType == typeof(bool?))
                 {
                     var dbValue = ((bool)propertyValue == true ? 1 : 0);
-                    parameters.Add($"@{propertyName}", dbValue, DbType.Int32);
+                    parameters.Add($"@m_{propertyName}", dbValue, DbType.Int32);
                 }
                 else
                 {
-                    parameters.Add($"@{propertyName}", propertyValue);
+                    parameters.Add($"@m_{propertyName}", propertyValue);
                 }
 
             }

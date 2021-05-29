@@ -30,6 +30,7 @@ namespace MISA.CukCuk.Api.Controllers
         /// <returns>
         /// HttpCode 200 có dữ liệu trả về;
         /// HttpCode 204 nếu không có dữ liệu
+        /// HttpCode 400 Bad Request    
         /// </returns>
         /// CreatedBy: VXHUNG (26/05/2021)
         [HttpGet]
@@ -46,8 +47,69 @@ namespace MISA.CukCuk.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Lấy dữ liệu theo Id
+        /// </summary>
+        /// <param name="entityId"></param>
+        /// <returns>Thông tin đối tượng chứa Id đó
+        /// HttpCode 200 có dữ liệu trả về;
+        /// HttpCode 204 nếu không có dữ liệu
+        /// HttpCode 400 Bad Request        
+        /// HttpCode 500 lỗi Server
+        /// </returns>
+        /// CreatedBy: VXHUNG (26/05/2021)
+        [HttpGet("{entityId}")]
+        public IActionResult Get(string entityId)
+        {
+            var entity = _baseService.GetById(Guid.Parse(entityId));
+            if (entity == null)
+            {
+                return NoContent();
+            }
+            return Ok(entity);
+        }
 
+        /// <summary>
+        /// Thêm mới dữ liệu
+        /// </summary>
+        /// <param name="entity">Thực thể thêm mới</param>
+        /// <returns>
+        /// HttpCode 200 có dữ liệu trả về; Msg: Thêm mới dữ liệu thành công
+        /// HttpCode 400 Bad Request  
+        /// HttpCode 500 lỗi Server
+        /// </returns>
+        /// CreatedBy: VXHUNG (26/05/2021)
+        [HttpPost]
+        public IActionResult Post([FromBody] MISAEntity entity)
+        {
+            var result = _baseService.Insert(entity);
+            if (result.MISACode == Core.Enums.MISACode.NotValid)
+            {
+                return BadRequest(result.data);
+            }
+            return Ok(result);
+        }
 
+        /// <summary>
+        /// Cập nhật dữ liệu
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="entityId"></param>
+        /// <returns>
+        /// HttpCode 200: Cập nhật dữ liệu thành công
+        /// HttpCode 400 Bad Request    
+        /// HttpCode 500 lỗi Server
+        /// </returns>
+        [HttpPut]
+        public IActionResult Put([FromBody] MISAEntity entity, Guid entityId)
+        {
+            var result = _baseService.Update(entity, entityId);
+            if (result.MISACode == Core.Enums.MISACode.NotValid)
+            {
+                return BadRequest(result);
+            }
+            return Ok(result);
+        }
         #endregion
     }
 }

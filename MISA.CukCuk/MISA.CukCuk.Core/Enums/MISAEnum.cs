@@ -35,7 +35,6 @@ namespace MISA.CukCuk.Core.Enums
         Delete = 3
     }
 
-    
     /// <summary>
     /// Enum giới tính
     /// </summary>

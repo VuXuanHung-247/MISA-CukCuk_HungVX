@@ -43,7 +43,7 @@ namespace MISA.CukCuk.Core.Services
                 // Gắn trạng thái - phân biệt validate thêm
                 entity.EntityState = Enums.EntityState.AddNew;
                 ValidateObject(entity);
-                // Nếu dữ liệu đầu vào ok thì mới tiếp tục:
+                // validate thành công thì trả ra:
                 _serviceResult.data = _baseRepository.Insert(entity);
                 _serviceResult.Msg = "Thêm mới dữ liệu thành công";
                 _serviceResult.MISACode = Enums.MISACode.Success;
@@ -57,7 +57,20 @@ namespace MISA.CukCuk.Core.Services
 
         public ServiceResult Update(MISAEntity entity, Guid entityId)
         {
-            throw new NotImplementedException();
+            try
+            {
+                entity.EntityState = Enums.EntityState.Update;
+                ValidateObject(entity);
+                _serviceResult.data = _baseRepository.Update(entity, entityId);
+                _serviceResult.Msg = "Cập nhật dữ liệu thành công";
+                _serviceResult.MISACode = Enums.MISACode.Success;
+                return _serviceResult;
+            }
+            catch (Exception ex)
+            {
+                throw new ValidateExceptions(ex.Message);
+
+            }
         }
         public ServiceResult Delete(Guid entityId)
         {
