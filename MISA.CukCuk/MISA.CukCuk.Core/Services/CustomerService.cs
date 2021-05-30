@@ -23,5 +23,24 @@ namespace MISA.CukCuk.Core.Services
         }
         #endregion
 
+        protected override void CustomerValidate(Customer entity)
+        {
+            if(entity is Customer)
+            {
+                
+            }
+           
+            //// check mã khách hàng k được để trống 
+            //if (string.IsNullOrEmpty(entity.CustomerCode))
+            //{
+            //    throw new Exception("Mã khách hàng không được để trống");
+            //}
+            //// check thông tin bắt buộc nhập
+
+            //// check trùng mã
+
+          
+        }
+
     }
 }

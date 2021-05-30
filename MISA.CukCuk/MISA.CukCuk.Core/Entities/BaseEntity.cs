@@ -10,7 +10,6 @@ namespace MISA.CukCuk.Core.Entities
     public class Required : Attribute
     {
         public string UserMsg = string.Empty;
-
         public Required(string userMsg = "")
         {
             UserMsg = userMsg;
@@ -31,7 +30,6 @@ namespace MISA.CukCuk.Core.Entities
             Length = maxLength;
             UserMsg = userMsg;
         }
-
         public string ErrorMaxLength
         {
             get
@@ -43,6 +41,18 @@ namespace MISA.CukCuk.Core.Entities
                 return null;
             }
         }
+    }
+
+    // Dùng để check trùng dữ liệu
+    [AttributeUsage(AttributeTargets.Property)]
+    public class IsDuplicate : Attribute
+    {
+
+    }
+    // Khóa chính
+    [AttributeUsage(AttributeTargets.Property)]
+    public class Primary : Attribute
+    {
     }
     public abstract class BaseEntity
     {

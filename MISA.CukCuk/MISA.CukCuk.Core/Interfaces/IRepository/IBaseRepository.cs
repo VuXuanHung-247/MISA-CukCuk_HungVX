@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection;
 using System.Text;
 
 namespace MISA.CukCuk.Core.Interfaces.IRepository
@@ -50,5 +51,14 @@ namespace MISA.CukCuk.Core.Interfaces.IRepository
         /// <returns></returns>
         /// CreatedBy: VXHUNG (26/05/2021)
         int Delete(Guid entityId);
+
+        /// <summary>
+        /// Lấy dữ liệu theo trường dữ liệu của thực thể
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="property"></param>
+        /// <returns></returns>
+        /// CreatedBy: VXHUNG (28/05/2021)
+        MISAEntity GetEntityByProperty(MISAEntity entity, PropertyInfo property);
     }
 }

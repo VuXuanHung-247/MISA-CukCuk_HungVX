@@ -7,6 +7,8 @@ using MySqlConnector;
 using Dapper;
 using System.Linq;
 using MISA.CukCuk.Core.Entities;
+using System.Reflection;
+using MISA.CukCuk.Core.Enums;
 
 namespace MISA.CukCuk.Infrastructure.Repository
 {
@@ -103,19 +105,40 @@ namespace MISA.CukCuk.Infrastructure.Repository
             var result = _dbConnection.Execute(storeName, param: dynamicParameters, commandType: CommandType.StoredProcedure);
             return result;
 
-            //var result = _dbConnection.Execute($"DELETE FROM {_tableName} WHERE {_tableName}Id = '{entityId}'", commandType: CommandType.Text);
-            //return result;
         }
 
 
 
         // Các hàm hỗ trợ dùng chung
+        /// <summary>
+        /// Lấy dữ liệu theo trường dữ liệu của thực thể 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <param name="property"></param>
+        /// <returns></returns>
+        ///  CreateBy: VXHUNG (28/05/2021)
+        public MISAEntity GetEntityByProperty(MISAEntity entity, PropertyInfo property)
+        {
+            var propertyName = property.Name;
+            var propertyValue = property.GetValue(entity);
+            var keyValue = entity.GetType().GetProperty($"{_tableName}Id").GetValue(entity);
+            var query = string.Empty;
+            if (entity.EntityState == EntityState.AddNew)
+                query = $"SELECT * FROM {_tableName} WHERE {propertyName} = '{propertyValue}'";
+            else if (entity.EntityState == EntityState.Update)
+                query = $"SELECT * FROM {_tableName} WHERE {propertyName} = '{propertyValue}' AND {_tableName}Id <> '{keyValue}'";
+            else
+                return null;
+            var entityReturn = _dbConnection.Query<MISAEntity>(query, commandType: CommandType.Text).FirstOrDefault();
+            return entityReturn;
+        }
 
         /// <summary>
         /// Lấy dữ liệu truyền vào
         /// </summary>
         /// <param name="entity"></param>
         /// <returns></returns>
+        /// CreateBy: VXHUNG (26/05/2021)
         private DynamicParameters MappingDbType(MISAEntity entity)
         {
             var properties = entity.GetType().GetProperties();

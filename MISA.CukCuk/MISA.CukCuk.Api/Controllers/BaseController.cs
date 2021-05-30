@@ -100,6 +100,7 @@ namespace MISA.CukCuk.Api.Controllers
         /// HttpCode 400 Bad Request    
         /// HttpCode 500 lỗi Server
         /// </returns>
+        /// CreatedBy: VXHUNG (26/05/2021)
         [HttpPut]
         public IActionResult Put([FromBody] MISAEntity entity, Guid entityId)
         {
@@ -109,6 +110,19 @@ namespace MISA.CukCuk.Api.Controllers
                 return BadRequest(result);
             }
             return Ok(result);
+        }
+
+        /// <summary>
+        /// Xóa dữ liệu
+        /// </summary>
+        /// <param name="entityId"></param>
+        /// <returns></returns>
+        /// CreatedBy: VXHUNG (26/05/2021)
+        [HttpDelete("{entityId}")]
+        public IActionResult Delete(Guid entityId)
+        {
+            var entity = _baseService.Delete(entityId);
+            return Ok(entity);
         }
         #endregion
     }

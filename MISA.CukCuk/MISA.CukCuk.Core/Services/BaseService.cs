@@ -61,6 +61,7 @@ namespace MISA.CukCuk.Core.Services
             {
                 entity.EntityState = Enums.EntityState.Update;
                 ValidateObject(entity);
+                //Validate(entity);
                 _serviceResult.data = _baseRepository.Update(entity, entityId);
                 _serviceResult.Msg = "Cập nhật dữ liệu thành công";
                 _serviceResult.MISACode = Enums.MISACode.Success;
@@ -74,61 +75,48 @@ namespace MISA.CukCuk.Core.Services
         }
         public ServiceResult Delete(Guid entityId)
         {
-            throw new NotImplementedException();
+            _serviceResult.data = _baseRepository.Delete(entityId);
+            return _serviceResult;
         }
 
 
+        /// <summary>
+        /// Hàm xử lý validate, logic chung
+        /// </summary>
+        /// <param name="entity"></param>
+        /// CreatedBy: VXHUNG (26/05/2021)
         private void ValidateObject(MISAEntity entity)
         {
-            // Validate với các trường thông tin bắt buộc nhập:
-
+           
             // Lấy ra tất cả các property của class:
             var properties = typeof(MISAEntity).GetProperties();
 
             foreach (var property in properties)
             {
 
-                // Lấy tên thuộc tính
-                var propertyName = property.Name;
+                var propertyName = property.Name; // Lấy tên thuộc tính
 
-                // Lấy ra giá trị của thuộc tính
-                var propertyValue = property.GetValue(entity);
+                var propertyValue = property.GetValue(entity); // Lấy giá trị của thuộc tính
 
-                // Thuộc tính bắt buộc nhập
-                var propertyRequireds = property.GetCustomAttributes(typeof(Required), true);
+                var propertyRequireds = property.GetCustomAttributes(typeof(Required), true); // Lấy các thuộc tính bắt buộc nhập
 
-                // Độ dài giới hạn của thuộc tính
-                var propertyMaxLengths = property.GetCustomAttributes(typeof(MaxLength), true);
+                var propertyMaxLengths = property.GetCustomAttributes(typeof(MaxLength), true); // Lấy giới hạn độ dài của thuộc tính
 
-                // Xác định xem property nào không được phếp để trống, bắt buộc nhập (MISAREquired)
+                // Check thông tin bắt buộc nhập:
                 if (propertyRequireds.Length > 0)
                 {
                     if (propertyValue == null)
                     {
-                        throw new ValidateExceptions($"Không tìm thấy giá trị của trường [{propertyName}]");
-                    }
-
-                    // Lấy ra câu thông báo tùy chọn: về dữ liệu không được để trống
-                    var userMsg = (propertyRequireds[0] as Required).UserMsg;
-
-                    if (string.IsNullOrEmpty(userMsg))
-                    {
-                        userMsg = $"[{propertyName}]";
-                        if (string.IsNullOrEmpty(propertyValue.ToString()))
+                        var userMsg = (propertyRequireds[0] as Required).UserMsg;
+                        if(string.IsNullOrEmpty(userMsg))
                         {
-                            var errorMsg = $"Thông tin {userMsg} không được phép để trống";
-                            throw new ValidateExceptions(errorMsg);
+                            userMsg = $"Thông tin {propertyName}không được phép để trống";
                         }
-                    }
-
-                    if (string.IsNullOrEmpty(propertyValue.ToString()))
-                    {
-                        var errorMsg = $"{userMsg}";
-                        throw new ValidateExceptions(errorMsg);
+                        throw new ValidateExceptions(userMsg);
                     }
                 }
 
-                // Msg về giới hạn độ dài của thuộc tính
+                // Check độ dài thuộc tính
                 if (propertyMaxLengths.Length > 0)
                 {
                     // Lấy ra độ dài tối đa cho phép của chuỗi:
@@ -138,9 +126,24 @@ namespace MISA.CukCuk.Core.Services
                         throw new ValidateExceptions((propertyMaxLengths[0] as MaxLength).ErrorMaxLength);
                     }
                 }
-                // Check trùng dữ liệu
+                // Check trùng dữ liệu ( liên quan đến DB nữa )
+                if (property.IsDefined(typeof(IsDuplicate), false))
+                {
+                    // check trùng dữ liệu:
+                    var entityDulicate = _baseRepository.GetEntityByProperty(entity, property);
+                    if (entityDulicate != null)
+                    {
+                        var errorMsg = $"Thông tin {propertyName} đã tồn tại";
+                        throw new ValidateExceptions(errorMsg);
+                    }
+                }
                 // ...
             }
+            CustomerValidate(entity);
+
+        }
+        protected virtual void CustomerValidate(MISAEntity entity)
+        {
 
         }
         #endregion
