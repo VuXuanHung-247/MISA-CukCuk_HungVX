@@ -25,3 +25,5 @@ C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.Cu
 C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.deps.json
 C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.dll
 C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\bin\Debug\netcoreapp3.1\MISA.CukCuk.Core.pdb
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\obj\Debug\netcoreapp3.1\MISA.CukCuk.Core.Properties.Resources.resources
+C:\Users\Admin\Desktop\MISA.CukCuk_HungVX\MISA-CukCuk_HungVX\MISA.CukCuk\MISA.CukCuk.Core\obj\Debug\netcoreapp3.1\MISA.CukCuk.Core.csproj.GenerateResource.cache

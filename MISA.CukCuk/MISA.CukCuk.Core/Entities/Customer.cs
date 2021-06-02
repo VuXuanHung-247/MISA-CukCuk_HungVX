@@ -20,7 +20,7 @@ namespace MISA.CukCuk.Core.Entities
         /// </summary>
         [IsDuplicate]
         [Required("Mã khách hàng không được phép để trống")]
-        [MaxLength(20,"Mã khách hàng không quá 20 kýt tự")]
+        [MaxLength(20,"Mã khách hàng không quá 20 ký tự")]
         public string CustomerCode { get; set; }
         /// <summary>
         /// Tên khách hàng
@@ -33,12 +33,14 @@ namespace MISA.CukCuk.Core.Entities
         /// <summary>
         /// Họ tên đầy đủ khách hàng
         /// </summary>
-        [Required("Họ tên khách hàng không được phép để trống")]
+        [Required("Họ tên đầy đủ khách hàng không được phép để trống")]
         [MaxLength(100, "Tên nhân viên không được quá 100 kí tự")]
         public string FullName { get; set; }
         /// <summary>
         /// Giới tính
         /// </summary>
+        /// 
+        [Required]
         public int? Gender { get; set; }
         /// <summary>
         /// Địa chỉ
@@ -48,7 +50,10 @@ namespace MISA.CukCuk.Core.Entities
         /// <summary>
         /// Ngày sinh
         /// </summary>
-        public DateTime DateOfBirth { get; set; }
+        /// 
+        [Required]
+        [RangeDateTime("01-02-2001", "01-02-2021", "Thông tin ngày tháng năm phải nằm trong phạm vi từ (01-02-2001) đến (01-02-2021) ")]
+        public DateTime? DateOfBirth { get; set; }
         /// <summary>
         /// Email khách hàng
         /// </summary>
@@ -57,6 +62,8 @@ namespace MISA.CukCuk.Core.Entities
         /// <summary>
         /// Số điện thoại khách hàng
         /// </summary>
+        /// 
+        [Required]
         [IsDuplicate]
         [MaxLength(20, "Số điện thoại không được quá 20 kí tự")]
         public string PhoneNumber { get; set; }
@@ -67,6 +74,8 @@ namespace MISA.CukCuk.Core.Entities
         /// <summary>
         /// Số ghi nợ
         /// </summary>
+        /// 
+        [IsDebitAmount(0,"Số tiền trong tài khoản không được nhỏ hơn 0")]
         public double? DebitAmout { get; set; }
         /// <summary>
         /// Số thẻ

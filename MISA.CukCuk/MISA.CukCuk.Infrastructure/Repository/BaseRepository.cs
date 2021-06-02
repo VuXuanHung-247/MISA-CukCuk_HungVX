@@ -69,6 +69,8 @@ namespace MISA.CukCuk.Infrastructure.Repository
         public int Insert(MISAEntity entity)
         {
             var storeName = $"Proc_Insert{_tableName}";
+            // Id mới
+            typeof(MISAEntity).GetProperty($"{_tableName}Id").SetValue(entity, Guid.NewGuid());
             var storeParam = MappingDbType(entity);
             var rowAffects = _dbConnection.Execute(storeName, param: storeParam, commandType: CommandType.StoredProcedure);
             return rowAffects;

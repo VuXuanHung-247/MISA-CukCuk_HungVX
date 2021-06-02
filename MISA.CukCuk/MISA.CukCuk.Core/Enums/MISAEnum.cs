@@ -15,7 +15,7 @@ namespace MISA.CukCuk.Core.Enums
         /// <summary>
         /// Dữ liệu không hợp lệ
         /// </summary>
-        NotValid = 400,
+        BadRequest = 400,
 
         /// <summary>
         /// Thành công

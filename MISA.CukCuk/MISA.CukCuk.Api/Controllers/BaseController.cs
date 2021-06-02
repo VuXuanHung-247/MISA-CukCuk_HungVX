@@ -83,11 +83,22 @@ namespace MISA.CukCuk.Api.Controllers
         public IActionResult Post([FromBody] MISAEntity entity)
         {
             var result = _baseService.Insert(entity);
-            if (result.MISACode == Core.Enums.MISACode.NotValid)
+            if (result.IsValid == true)
             {
-                return BadRequest(result.data);
+                var data = (int?)result.data;
+                if (data > 0)
+                {
+                    return Ok(result);
+                }
+                else
+                {
+                    return NoContent();
+                }
             }
-            return Ok(result);
+            else
+            {
+                return BadRequest(result);
+            }
         }
 
         /// <summary>
@@ -105,7 +116,7 @@ namespace MISA.CukCuk.Api.Controllers
         public IActionResult Put([FromBody] MISAEntity entity, Guid entityId)
         {
             var result = _baseService.Update(entity, entityId);
-            if (result.MISACode == Core.Enums.MISACode.NotValid)
+            if (result.MISACode == Core.Enums.MISACode.BadRequest)
             {
                 return BadRequest(result);
             }

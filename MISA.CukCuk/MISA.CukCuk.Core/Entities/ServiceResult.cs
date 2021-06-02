@@ -17,6 +17,10 @@ namespace MISA.CukCuk.Core.Entities
 
         #region Property
         /// <summary>
+        /// Dữ liệu hợp lệ
+        /// </summary>
+        public bool IsValid { get; set; } = true;
+        /// <summary>
         /// Dữ liệu trả về
         /// </summary>
         public Object data { get; set; }
@@ -24,7 +28,7 @@ namespace MISA.CukCuk.Core.Entities
         /// <summary>
         /// Message trả về
         /// </summary>
-        public string Msg { get; set; }
+        public List<string> Msg { get; set; } = new List<string>();
 
         /// <summary>
         /// Mã lỗi trả về
