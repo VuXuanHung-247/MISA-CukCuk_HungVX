@@ -125,11 +125,14 @@ namespace MISA.CukCuk.Core.Services
 
                 var propertyName = property.Name; // Lấy tên thuộc tính
                 var propertyValue = property.GetValue(entity); // Lấy giá trị của thuộc tính
+                var propertyType = property.GetType(); // Lấy kiểu dữ liệu của thuộc tính
 
                 var propertyRequireds = property.GetCustomAttributes(typeof(Required), true); // Lấy các thuộc tính bắt buộc nhập
                 var propertyMaxLengths = property.GetCustomAttributes(typeof(MaxLength), true); // Lấy độ dài cho chép của thuộc tính
                 var propertyRangeDateTime = property.GetCustomAttributes(typeof(RangeDateTime), true); // Lấy phạm vi cho phép của thuộc tính Ngày tháng
                 var propertyIsDebitAmount = property.GetCustomAttributes(typeof(IsDebitAmount), true); // Lấy giới hạn nhỏ nhất của tiền trong tài khoản
+                var propertyRegularDataType = property.GetCustomAttributes(typeof(RegularDataType), true); // Lấy chuẩn định dạng kiểu dữ liệu
+                var propertyIsValidEmail = property.GetCustomAttributes(typeof(IsValidEmail), true); // Lấy chuẩn định dạng email
 
                 // Check thông tin bắt buộc nhập:
                 if (propertyRequireds.Length > 0)
@@ -162,6 +165,7 @@ namespace MISA.CukCuk.Core.Services
                         return false;
                     }
                 }
+
                 // Check trùng dữ liệu ( liên quan đến DB nữa )
                 if (property.IsDefined(typeof(IsDuplicate), false))
                 {
@@ -176,6 +180,7 @@ namespace MISA.CukCuk.Core.Services
                         return false;
                     }
                 }
+
                 // Check phạm vi cho phép của thuộc tính Ngày tháng
                 if (propertyRangeDateTime.Length > 0)
                 {
@@ -185,8 +190,7 @@ namespace MISA.CukCuk.Core.Services
 
                     int result_1 = DateTime.Compare(Convert.ToDateTime(propertyValue), minDate);
                     int result_2 = DateTime.Compare(Convert.ToDateTime(propertyValue), maxDate);
-                    //&& (minDate > propertyValue || propertyValue > maxDate)
-                    if ((result_1 <= 0 || result_2 >= 0))//
+                    if ((result_1 <= 0 || result_2 >= 0))
                     {
                         if (string.IsNullOrEmpty(userMsg))
                         {
@@ -198,10 +202,10 @@ namespace MISA.CukCuk.Core.Services
                         return false;
                     }
                 }
+
                 // Check số tiền không được nhỏ hơn 1 value nào đó
                 if (propertyIsDebitAmount.Length > 0)
                 {
-                    // Lấy ra độ dài tối đa cho phép của chuỗi:
                     var debitAmount = (propertyIsDebitAmount[0] as IsDebitAmount).DebitAmount;
                     if (propertyValue != null && Convert.ToDouble(propertyValue) < debitAmount)
                     {
@@ -211,6 +215,54 @@ namespace MISA.CukCuk.Core.Services
                         _serviceResult.MISACode = MISACode.BadRequest;
                         return false;
                     }
+                }
+
+                // Check quy ước nhập nhập dữ liệu tương ứng với từng kiểu dữ liệu
+                if (propertyRegularDataType.Length > 0)
+                {
+                    //DateTime dateTimeType;
+                    //if (propertyType != typeof(DateTime) && !DateTime.TryParse(propertyValue.ToString(), out dateTimeType))
+                    //{
+                    //    _serviceResult.IsValid = false;
+                    //    _serviceResult.Msg.Add(String.Format($"Thông tin {propertyName} phải được nhập dưới dạng dd/mm/yyyy "));
+                    //    _serviceResult.MISACode = MISACode.BadRequest;
+                    //    return false;
+                    //}
+                    int intType;
+                    if (propertyType != typeof(int) && !Int32.TryParse(propertyValue.ToString(), out intType))
+                    {
+                            _serviceResult.IsValid = false;
+                            _serviceResult.Msg.Add(String.Format($"Thông tin {propertyName} chỉ cho phép nhập số"));
+                            _serviceResult.MISACode = MISACode.BadRequest;
+                            return false;
+                    }
+                }
+
+                // Check quy ước nhập email
+                if (propertyIsValidEmail.Length > 0)
+                {
+                    var userMsg = (propertyIsValidEmail[0] as IsValidEmail).UserMsg;
+                    try
+                    {
+                        string value = propertyValue.ToString();
+                        var email = new System.Net.Mail.MailAddress(value);
+                        if (email.Address != value)
+                        {
+                            if (string.IsNullOrEmpty(userMsg))
+                            {
+                                userMsg = $"Thông tin {propertyName} phải viết dưới dạng abc@gmail.com";
+                            }
+                            _serviceResult.IsValid = false;
+                            _serviceResult.Msg.Add(String.Format(userMsg));
+                            _serviceResult.MISACode = MISACode.BadRequest;
+                            return false;
+                        }
+                    }
+                    catch(Exception)
+                    {
+                        throw new ValidateExceptions(userMsg);
+                    }
+                   
                 }
             }
             return true;

@@ -44,6 +44,7 @@ namespace MISA.CukCuk.Core.Entities
             UserMsg = userMsg;
         }
     }
+
     // Dùng để check số tiền không được âm
     [AttributeUsage(AttributeTargets.Property)]
     public class IsDebitAmount : Attribute
@@ -67,24 +68,45 @@ namespace MISA.CukCuk.Core.Entities
         //    }
         //}
     }
-        // Dùng để check trùng dữ liệu
-        [AttributeUsage(AttributeTargets.Property)]
-        public class IsDuplicate : Attribute
-        {
 
-        }
-        // Khóa chính
-        [AttributeUsage(AttributeTargets.Property)]
-        public class Primary : Attribute
-        {
-        }
+    // Dùng để check trùng dữ liệu
+    [AttributeUsage(AttributeTargets.Property)]
+    public class IsDuplicate : Attribute
+    {
 
 
-        public abstract class BaseEntity
+    }
+
+    // Dùng để check kiểu dữ liệu Ngày tháng
+    [AttributeUsage(AttributeTargets.Property)]
+    public class RegularDataType : Attribute
+    {
+
+    }
+
+    // Dùng để check trùng dữ liệu
+    [AttributeUsage(AttributeTargets.Property)]
+    public class IsValidEmail : Attribute
+    {
+        public string UserMsg = string.Empty;
+        public IsValidEmail(string userMsg = "")
         {
-            /// <summary>
-            /// Xác định trạng thái thêm hay cập nhật
-            /// </summary>
-            public EntityState EntityState { get; set; } = EntityState.AddNew;
+            UserMsg = userMsg;
         }
     }
+
+    // Khóa chính
+    [AttributeUsage(AttributeTargets.Property)]
+    public class Primary : Attribute
+    {
+    }
+
+
+    public abstract class BaseEntity
+    {
+        /// <summary>
+        /// Xác định trạng thái thêm hay cập nhật
+        /// </summary>
+        public EntityState EntityState { get; set; } = EntityState.AddNew;
+    }
+}
