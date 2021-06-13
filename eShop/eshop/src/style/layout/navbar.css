@@ -1,0 +1,89 @@
+#navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 166px;
+  height: 100vh;
+}
+
+/* logo */
+.logo {
+  height: 52px;
+  display: flex;
+  align-items: center;
+  background-color: #1e235a;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url('../../assets/img/Logo_Full_White.png');
+}
+
+/* menu */
+.menu {
+  height: calc(100vh - 48px);
+  overflow-x: auto;
+  overflow-y: auto;
+  background-color: #2b3173;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #F4F5F6;
+}
+
+.menu-item {
+  align-items: center;
+  height: 42px;
+  width: 100%;
+  color:#aaacc7;
+  display: flex;
+}
+
+.menu-item:hover {
+  background-color: #1e235a;
+  color:#fff;
+  cursor: pointer;
+}
+
+.menu-item-logo {
+  margin-left: 14px;
+  background-image: url('../../assets/img/slibarmenu.png');
+  background-size: 200%;
+  height: 24px;
+  width: 24px;
+  background-repeat: no-repeat;
+  margin-right: 8px;
+}
+
+.menu-item-title {
+  font-size: 13px;
+}
+
+
+.dashboard {
+  background-position: 0px 2px;
+}
+
+.report {
+  background-position: 0px -251px;
+}
+
+.order {
+  background-position: 0px -107px;
+}
+
+.pu {
+  background-position: 0px -35px;
+}
+
+.sale {
+  background-position: 0px -178px;
+}
+
+.manage {
+  background-position: 0px -215px;
+}
+
+.goods {
+  background-position: 0px -319px;
+}
