@@ -1,9 +1,11 @@
 #content {
   position: absolute;
-  top: 48px;
-  left: 176px;
-  right: 0px;
-  bottom: 0px;
-  /* background-color: #F4F5F6; */
-  background-color:beige;
+  height: calc(100vh - 52px);
+  width: calc(100% - 166px);
+  top: 52px;
+  left: 166px;
+  right: 0;
+  bottom: 0;
+  background-color:#e5e6eb;
+  /* height: calc(100vh - 52px); */
 }

@@ -1,0 +1,81 @@
+.content-body {
+  position: absolute;
+  top:10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background-color: #fff;
+}
+.toolbar{
+  height: 36px;
+  width: 100%;
+  background-color: #2b3173;
+  display: flex;
+}
+
+.toolbar-item {
+  align-items: center;
+  height: 36px;
+  color:#fff;
+  display: flex;
+  justify-content:left;
+}
+
+.toolbar-item:hover {
+  background-color: #1e235a;
+  color:#fff;
+  cursor: pointer;
+}
+
+.toolbar-item-logo {
+  background-image: url('../../assets/img/common-icon.png');
+  height: 36px;
+  width: 36px;
+  background-repeat: no-repeat;
+}
+
+.toolbar-item-title {
+  font-size: 13px;
+}
+
+.add {
+  background-position: 10px -117px;
+}
+.duplicate {
+  background-position: -966px -117px;
+}
+.update {
+  background-position: -1443px -117px;
+}
+.delete {
+  background-position: -1070px -117px;
+}
+.refresh {
+  background-position: -868px -117px;
+}
+
+.toolbar-item-title{
+  height: 36px;
+  line-height: 38px;
+}
+.add-title {
+  width: 73px;
+  border-right: 1px solid #1e235a ;
+}
+.duplicate-title {
+  width: 73px;
+  border-right: 1px solid #1e235a ;
+}
+.update-title {
+  width: 43px;
+  border-right: 1px solid #1e235a ;
+}
+.delete-title {
+  width: 43px;
+  border-right: 1px solid #1e235a ;
+}
+
+.refresh-title {
+  width: 43px;
+}
+

@@ -1,10 +1,97 @@
 #header {
   position: absolute;
   height: 52px;
+  width: calc(100% - 166px);
   top: 0;
-  left: 200px;
+  left: 166px;
   right: 0;
   justify-content: space-between;
   display: flex;
   align-items: center;
+}
+
+.directory {
+  align-items: center;
+  margin-left: 15px;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.store {
+  height: 30px;
+  width: 200px;
+  border: 1px solid #d0d2da;
+  border-radius: 4px;
+  margin-right: 15px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+.input{
+  font-size: 13px;
+  padding: 7px;
+}
+
+.user-detail{
+  display: flex;
+}
+.user-avatar {
+  background-image: url('../../assets/img/Image.jpg');
+  background-repeat: no-repeat;
+  background-position: 0px 3px;
+  background-size: 28px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.username {
+  height: 30px;
+  max-width: 300px;
+  line-height: 35px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.right-down-arrow {
+  background-image: url('../../assets/img/arrow-down-line.png');
+  background-repeat: no-repeat;
+  background-position: 7px 15px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.news {
+  background-image: url('../../assets/img/misasupport_1.png');
+  background-repeat: no-repeat;
+  background-color: #2B3171 ;
+  /* background-position: 0px -3px; */
+  width: 44px;
+  height: 52px;
+  cursor: pointer;
+}
+.icon-announce{
+  background-image: url('../../assets/img/notify-18.png');
+  background-repeat: no-repeat;
+  background-position: 12.5px 16px;
+  width: 44px;
+  height: 52px;
+  cursor: pointer;
+  border-right: 1px solid #e5e6eb;
+}
+.helps{
+  background-image: url('../../assets/img/icon_help_18.png');
+  background-repeat: no-repeat;
+  background-position: 12.5px 16px;
+  width: 45px;
+  height: 48px;
+  cursor: pointer;
 }

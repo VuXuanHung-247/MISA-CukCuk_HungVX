@@ -1,10 +1,15 @@
 <template>
-  <div id="content"></div>
+  <div id="content">
+    <StoreList/>
+  </div>
 </template>
 
 <script>
+import StoreList from '../views/StoreList.vue'
 export default {
-
+  components: {
+    StoreList
+  }
 }
 </script>
 
